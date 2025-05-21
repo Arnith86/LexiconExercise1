@@ -13,10 +13,10 @@ Salery: Lönen som matas in.
 
 Och dessa metoder.
 
-GetId() : Hämtar det unika identifikationen för Employee
-GetName() : hämtar personens namn
+Id{get;} : Hämtar det unika identifikationen för Employee
+Name{get;} : hämtar personens namn
+Salery{get;} : Hämtar personen lön
 ChangeName() : Ändrar personen namn (inte supernödvändig för denna upgift men hade nog haft med den) 
-GetSalery() : Hämtar personen lön
 ChangeSalary() : ändrar personens lön 
 
 
