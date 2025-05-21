@@ -16,6 +16,9 @@ namespace LexiconExercise1
 			_employees = new Dictionary<int, IEmployee>();
 		}
 
+		// formats to the currency 
+		private string FormatCurrency(int salary) => salary.ToString("C");
+		
 		// Initiates input for new employee and adds said employee to the list
 		public void AddEmployee()
 		{
@@ -42,7 +45,7 @@ namespace LexiconExercise1
 			Console.Clear();
 			
 			_employees.Add(++_idCounter, new Employee(_idCounter, name, salary));
-			Console.WriteLine($"Employee with \nID: {_idCounter} \nName: {name} \nSalary: {salary} \nadded to record. \n");
+			Console.WriteLine($"Employee with \nID: {_idCounter} \nName: {name} \nSalary: {FormatCurrency(salary)} \nadded to record. \n");
 		}
 
 		
@@ -51,7 +54,7 @@ namespace LexiconExercise1
 		{
 			foreach (var employee in _employees)
 			{
-				Console.WriteLine($"Employee ID: {employee.Key} Name: {employee.Value.Name} Salary: {employee.Value.Salary}");
+				Console.WriteLine($"Employee ID: {employee.Key} Name: {employee.Value.Name} Salary: {FormatCurrency( employee.Value.Salary)}");
 			}
 		}
 
