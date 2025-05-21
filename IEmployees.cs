@@ -12,6 +12,7 @@ namespace LexiconExercise1
 		public void RemoveEmployee();
 		public IEmployee GetEmployee(int id);
 		public void DisplayAllEmployee();
-		
+		public void ChangeEmployeeName();
+		public void ChangeEmployeeSalary();
 	}
 }

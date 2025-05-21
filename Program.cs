@@ -16,9 +16,11 @@
                 Console.WriteLine("1: Add an employee.");
 				Console.WriteLine("2: Remove an employee.");
 				Console.WriteLine("3: Display all employees.");
+                Console.WriteLine("4: Change employees name.");
+				Console.WriteLine("5: Change employees salary.");
 
 
-                string input = Console.ReadLine();
+				string input = Console.ReadLine();
 
                 if (int.TryParse(input, out int intInput))
                 {
@@ -31,6 +33,12 @@
 							break;
 						case 3:
 							employees.DisplayAllEmployee();
+							break;
+						case 4:
+							employees.ChangeEmployeeName();
+							break;
+						case 5:
+							employees.ChangeEmployeeSalary();
 							break;
 						default:
                             break;

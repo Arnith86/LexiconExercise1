@@ -16,7 +16,6 @@ namespace LexiconExercise1
 			_employees = new Dictionary<int, IEmployee>();
 		}
 
-
 		// Initiates input for new employee and adds said employee to the list
 		public void AddEmployee()
 		{
@@ -46,6 +45,7 @@ namespace LexiconExercise1
 			Console.WriteLine($"Employee with \nID: {_idCounter} \nName: {name} \nSalary: {salary} \nadded to record. \n");
 		}
 
+		
 		// Displays all currently registered employees, showing id, name, salary 
 		public void DisplayAllEmployee()
 		{
@@ -95,6 +95,89 @@ namespace LexiconExercise1
 				Console.WriteLine($"Employee {_employees[id].Name} Id: {_employees[id].Id} removed from record. \n" );
 				_employees.Remove(id);
 			}
+			else
+			{
+				Console.WriteLine($"No Employee with the id {id} was found! Try again. \n");
+			}
+		}
+
+		// Change the specified employees name
+		public void ChangeEmployeeName()
+		{
+			int id = 0; 
+			do
+			{
+				Console.Clear();
+				Console.Write("Input the id of employee: ");
+				string idInput = Console.ReadLine();
+
+				if (int.TryParse(idInput, out id))
+					break;
+				else
+					Console.WriteLine("Employee IDs consists of only integers! Try again.\n");
+
+			} while (true);
+
+			
+			if (_employees.ContainsKey(id))
+			{
+				Console.Write("Input the new name: ");
+				string newName = Console.ReadLine();
+
+				_employees[id].ChangeName(newName);
+			}
+			else
+			{
+				Console.WriteLine($"No Employee with the id {id} was found! Try again. \n");
+			}		
+		}
+
+
+		// Change the specified employees salary 
+		public void ChangeEmployeeSalary()
+		{
+			int id = 0;
+			
+			do
+			{
+				Console.Clear();
+				Console.Write("Input the id of employee: ");
+				string idInput = Console.ReadLine();
+
+				if (int.TryParse(idInput, out id))
+					break;
+				else
+					Console.WriteLine("Employee IDs consists of only integers! Try again.\n");
+
+			} while (true);
+
+
+			if (_employees.ContainsKey(id))
+			{
+				Console.Write("Input the new salary: ");
+
+				int salary = 0;
+
+				do
+				{
+					Console.Write("Input the employees salary: ");
+					string salaryInput = Console.ReadLine();
+
+					if (int.TryParse(salaryInput, out salary))
+						break;
+					else
+						Console.WriteLine("Input only integer values! Try again.\n");
+
+				} while (true);
+
+								
+				_employees[id].ChangeSalary(salary);
+			}
+			else
+			{
+				Console.WriteLine($"No Employee with the id {id} was found! Try again. \n");
+			}
+
 		}
 	}
 }

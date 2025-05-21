@@ -11,7 +11,6 @@ namespace LexiconExercise1
 		private int _id;
 		private string _name;
 		private int _salary;
-
 		
 		public Employee(int id, string name, int salary)
 		{
@@ -20,6 +19,7 @@ namespace LexiconExercise1
 			_salary = salary;
 		}
 
+		// Only getters are publicly accessible 
 		public int Id => _id;
 		public string Name => _name;
 		public int Salary => _salary;
