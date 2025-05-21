@@ -1,0 +1,36 @@
+﻿Uppgift ett:
+Som ett absolut minimum så måste vi ha en klass för anställda. 
+Efter det skulle det vara trevligt med en wrapper klass för de samtliga anställda.
+Där har vi alla "Employee" samlade i en lista och vi kan via denna klass hämta värden och hantera dessa "Employees".
+
+Uppgift två: 
+
+Employee klassen bör ha dessa attribut.
+----------------------------------
+Id:  För och efternamn är sällan tillräkligt för att unikt identifiera en människa. person nr kanske? om inte det så incrementerande nr
+Name: Personens namn som matas in.
+Salery: Lönen som matas in.
+
+Och dessa metoder.
+
+GetId() : Hämtar det unika identifikationen för Employee
+GetName() : hämtar personens namn
+ChangeName() : Ändrar personen namn (inte supernödvändig för denna upgift men hade nog haft med den) 
+GetSalery() : Hämtar personen lön
+ChangeSalary() : ändrar personens lön 
+
+
+
+Employees (kan säkert finnas ett bättre namn) klassen bör ha dessa attribut 
+--------------------------------
+Dictunary<string, Employee> employees : En dictyonary som använder Employee.Id som key, och ett Employee object som value.
+
+Och dessa metoder.
+
+AddEmployee() :	Sätter till en till "Employee" i någon samling. 
+RemoveEmployee(): Tar bort en "Employee" från någon samling.
+GetEmployee() :	Hämtar en specefik "Employee".
+DisplayAllEmployees() : Skriver ut samtliga "Employee" i samlingen.
+
+
+ 
